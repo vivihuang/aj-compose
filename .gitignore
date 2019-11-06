@@ -1,2 +1,6 @@
 # DB files
 /botfront-db
+
+# IDE configs
+.idea
+*.iml
