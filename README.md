@@ -1,13 +1,15 @@
-# 🇷🇺 Russia: The Chatbot Admin UI
+# 🇷🇺 Russia: Build your infrastructure with code
 
 # Run locally
 
-**Start Rasa service first**, which will use the default port 5005. 
-
-> If Rasa is not started on port 5005, modify the setting in admin system.
-
-You need to open Rasa's `socketio` in `credentials.yml`, otherwise the robot will not be able to have a conversation in the management console.
+Please ensure your repos in the same folder.
 
 ```bash
 docker-compose up
+```
+
+# Rebuild
+
+```bash
+docker-compose build
 ```
