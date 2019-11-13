@@ -40,7 +40,8 @@ cd ../aj-georgia
 pull_code &
 
 # back to here
-echo "==== 🎉 All repo updated ===="
 cd ../aj-russia
 
 wait
+
+echo "==== 🎉 All repo updated ===="
