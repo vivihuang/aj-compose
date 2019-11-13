@@ -1,10 +1,10 @@
 version: "3"
 services:
-  # chatbot-ui:
-  #   build: ../aj-ukraine
-  #   image: aj/ukraine
-  #   ports:
-  #     - "3000:3000"
+  chatbot-ui:
+    build: ../aj-ukraine
+    image: aj/ukraine
+    ports:
+      - "3000:80"
 
   bff:
     build:
