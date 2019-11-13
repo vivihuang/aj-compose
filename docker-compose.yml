@@ -5,6 +5,8 @@ services:
     image: aj/ukraine
     ports:
       - "3000:80"
+    networks:
+      - rasa-network
 
   bff:
     build:
