@@ -3,6 +3,8 @@ services:
   chatbot-ui:
     build: ../aj-ukraine
     image: aj/ukraine
+    depends_on:
+      - bff
     ports:
       - "3000:80"
     networks:
