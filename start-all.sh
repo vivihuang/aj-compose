@@ -3,6 +3,11 @@
 case $1 in
   build)
     echo "==== Build all images before start ===="
+    cd ../aj-georgia
+    ./gradlew build
+    cd ../aj-latvia
+    ./gradlew build
+    cd ../aj-russia
     docker-compose build
     ;;
   update)
