@@ -16,37 +16,44 @@ services:
       - "8089:8080"
     environment:
       - "SPRING_PROFILES_ACTIVE=prod"
+    networks:
+      - rasa-network
 
-  rasa-server:
+  rasa:
     build: ../aj-estonia
     image: aj/estonia
     depends_on:
-      - rasa-mongo
+      - mongo
     ports:
       - "5005:5005"
-    links:
-      - rasa-actions-server:actions
-      - rasa-mongo:mongo
+    networks:
+      - rasa-network
     volumes:
       - ../aj-estonia/models/:/app/models
 
-  rasa-actions-server:
+  actions:
     build: ../aj-lithuania
     image: aj/lithuania
     ports:
       - "5055:5055"
+    networks:
+      - rasa-network
+    environment:
+      - BACKEND_API=backend
 
-  rasa-mongo:
+  mongo:
     image: "mongo:latest"
     volumes:
       - ../aj-estonia/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
       - ../aj-estonia/rasa-db:/data/db
     ports:
       - "27017:27017"
+    networks:
+      - rasa-network
     env_file:
       - ../aj-estonia/.env
 
-  custom-actions:
+  backend:
     build:
       context: ../aj-latvia
       args:
@@ -54,5 +61,10 @@ services:
     image: aj/latvia
     ports:
       - "8088:8080"
+    networks:
+      - rasa-network
     environment:
       - "SPRING_PROFILES_ACTIVE=prod"
+
+networks:
+  rasa-network: {}
