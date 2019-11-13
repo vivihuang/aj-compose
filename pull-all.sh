@@ -2,7 +2,7 @@
 
 pull_code() {
   if [[ -n $(git status -s) ]]; then
-    git stash
+    git stash -u
     git pull --rebase
     git stash pop
   else
