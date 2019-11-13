@@ -39,8 +39,23 @@ Use outside port, e.g. to access BFF via your local Postman or application, use 
 
 ## Helper scripts
 
-**Pull all repos**
+### Pull all repos
 
 ```bash
 ./pull-all.sh
+```
+
+It will pull all repo and stash your local code and then pop.
+
+### Start all services
+
+It will start all services and when `ctrl+c`, it will remove all services and network.
+
+```bash
+# start all services
+./start-all.sh
+# build images before start
+./start-all.sh build
+# update code, then build, then start
+./start-all.sh update
 ```
