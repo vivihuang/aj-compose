@@ -20,12 +20,12 @@ docker-compose build
 
 | Service Name | Internal Port | Outside Port | Repo Name |
 |---|---|---|---|
-| `chatbot-ui` | `80` | `3000` | `aj-ukraine` |
-| `bff` | `8080` | `8089` | `aj-georgia` |
-| `rasa-server` | `5005` | `5005` | `aj-estonia` |
-| `rasa-actions-server` | `5055` | `5055` | `aj-lithuania` |
-| `rasa-mongo` | `27017` | `27017` | `aj-estonia` |
-| `custom-actions` | `8080` | `8088` | `aj-latvia` |
+| `chatbot-ui` | `80` | `3000` | `aj/ukraine` |
+| `bff` | `8080` | `8089` | `aj/georgia` |
+| `rasa` | `5005` | `5005` | `aj/estonia` |
+| `actions` | `5055` | `5055` | `aj/ithuania` |
+| `mongo` | `27017` | `27017` | `aj/estonia` |
+| `backend` | `8080` | `8088` | `aj/latvia` |
 
 ### Networking between services
 
