@@ -59,3 +59,22 @@ It will start all services and when `ctrl+c`, it will remove all services and ne
 # update code, then build, then start
 ./start-all.sh update
 ```
+
+## Pair commit
+Refer to [gitconfig.md](./gitconfig.md), add the alias to your `~/.gitconfig` or project git config file.
+
+When you pair with someone, you can use the follow command to commit the code
+
+```
+git cc -m '[#x] message' --co 33
+```
+
+Current nick names
+
+| Abbr. | Name |
+|---|---|
+| `33` | Shan |
+| `4g` | Shiji |
+| `ad` | Andong |
+| `mt` | Dongsen |
+| `ly` | Yue |
