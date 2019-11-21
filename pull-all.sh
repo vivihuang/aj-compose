@@ -39,6 +39,11 @@ echo "==== 🇬🇪  Update BFF Georgia ===="
 cd ../aj-georgia
 pull_code &
 
+# DialogFlow
+echo "==== Update DialogFlow Khorezm ===="
+cd ../aj-khorezm
+pull_code &
+
 # back to here
 cd ../aj-russia
 

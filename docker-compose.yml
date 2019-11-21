@@ -70,5 +70,18 @@ services:
     environment:
       - "SPRING_PROFILES_ACTIVE=prod"
 
+  dialog-flow:
+    build:
+      context: ../aj-khorezm
+      args:
+        - "IMAGE_VERSION=dc-local"
+    image: aj/khorezm
+    ports:
+      - "8087:8080"
+    networks:
+      - rasa-network
+    environment:
+      - "SPRING_PROFILES_ACTIVE=prod"
+
 networks:
   rasa-network: {}

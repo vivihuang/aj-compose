@@ -26,6 +26,7 @@ docker-compose build
 | `actions` | `5055` | `5055` | `aj/ithuania` |
 | `mongo` | `27017` | `27017` | `aj/estonia` |
 | `backend` | `8080` | `8088` | `aj/latvia` |
+| `dialog-flow` | `8080` | `8087` | `aj/khorezm` |
 
 ### Networking between services
 
