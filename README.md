@@ -59,6 +59,8 @@ It will start all services and when `ctrl+c`, it will remove all services and ne
 ./start-all.sh build
 # update code, then build, then start
 ./start-all.sh update
+# Build all java apps and rebuild docker images
+./build-jar.sh
 ```
 
 ## Pair commit
