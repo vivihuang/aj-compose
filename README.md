@@ -41,6 +41,14 @@ Use outside port, e.g. to access BFF via your local Postman or application, use 
 
 ## Helper scripts
 
+### Clone all repos
+
+```bash
+./clone-all.sh
+```
+
+It will clone all repos.
+
 ### Pull all repos
 
 ```bash
