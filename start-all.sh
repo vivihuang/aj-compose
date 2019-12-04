@@ -2,13 +2,11 @@
 
 build_gradlew() {
   echo "==== Build all images before start ===="
-  cd ../aj-georgia
+  cd ../aj-bff
   ./gradlew bootjar
-  cd ../aj-latvia
+  cd ../aj-backend
   ./gradlew bootjar
-  cd ../aj-khorezm
-  ./gradlew bootjar
-  cd ../aj-russia
+  cd ../aj-compose
   docker-compose build
 }
 

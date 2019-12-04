@@ -1,8 +1,8 @@
 version: "3"
 services:
-  chatbot-ui:
-    build: ../aj-ukraine
-    image: aj/ukraine
+  ui:
+    build: ../aj-ui
+    image: aj/ui
     depends_on:
       - bff
     ports:
@@ -12,10 +12,10 @@ services:
 
   bff:
     build:
-      context: ../aj-georgia
+      context: ../aj-bff
       args:
         - "IMAGE_VERSION=dc-local"
-    image: aj/georgia
+    image: aj/bff
     ports:
       - "8089:8080"
     environment:
@@ -24,8 +24,8 @@ services:
       - rasa-network
 
   rasa:
-    build: ../aj-estonia
-    image: aj/estonia
+    build: ../aj-rasa
+    image: aj/rasa
     depends_on:
       - mongo
     ports:
@@ -33,11 +33,11 @@ services:
     networks:
       - rasa-network
     volumes:
-      - ../aj-estonia/models/:/app/models
+      - ../aj-rasa/models/:/app/models
 
   actions:
-    build: ../aj-lithuania
-    image: aj/lithuania
+    build: ../aj-rasa-actions
+    image: aj/rasa-actions
     ports:
       - "5055:5055"
     networks:
@@ -48,36 +48,23 @@ services:
   mongo:
     image: "mongo:latest"
     volumes:
-      - ../aj-estonia/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-      - ../aj-estonia/rasa-db:/data/db
+      - ../aj-rasa/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - ../aj-rasa/rasa-db:/data/db
     ports:
       - "27017:27017"
     networks:
       - rasa-network
     env_file:
-      - ../aj-estonia/.env
+      - ../aj-rasa/.env
 
   backend:
     build:
-      context: ../aj-latvia
+      context: ../aj-backend
       args:
         - "IMAGE_VERSION=dc-local"
-    image: aj/latvia
+    image: aj/backend
     ports:
       - "8088:8080"
-    networks:
-      - rasa-network
-    environment:
-      - "SPRING_PROFILES_ACTIVE=prod"
-
-  dialog-flow:
-    build:
-      context: ../aj-khorezm
-      args:
-        - "IMAGE_VERSION=dc-local"
-    image: aj/khorezm
-    ports:
-      - "8087:8080"
     networks:
       - rasa-network
     environment:

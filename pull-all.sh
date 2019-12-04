@@ -11,41 +11,36 @@ pull_code() {
 }
 
 # Update myself
-echo "==== 🇷🇺  Update Command Repo Russia ===="
+echo "==== 🇷🇺  Update Compose Repo ===="
 pull_code &
 
 # Chatbot UI
 echo "==== 🇺🇦  Update Chatbot UI Ukraine ===="
-cd ../aj-ukraine
+cd ../aj-ui
 pull_code &
 
 # Rasa
 echo "==== 🇪🇪  Update Rasa Estonia ===="
-cd ../aj-estonia
+cd ../aj-rasa
 pull_code &
 
 # Rasa action
 echo "==== 🇱🇹  Update Rasa action Lithuania ===="
-cd ../aj-lithuania
+cd ../aj-rasa-actions
 pull_code &
 
 # Custom action (Java)
-echo "==== 🇱🇻  Update Custom action Latvia ===="
-cd ../aj-latvia
+echo "==== 🇱🇻  Update Backend Latvia ===="
+cd ../aj-backend
 pull_code &
 
 # BFF
 echo "==== 🇬🇪  Update BFF Georgia ===="
-cd ../aj-georgia
-pull_code &
-
-# DialogFlow
-echo "==== Update DialogFlow Khorezm ===="
-cd ../aj-khorezm
+cd ../aj-bff
 pull_code &
 
 # back to here
-cd ../aj-russia
+cd ../aj-compose
 
 wait
 

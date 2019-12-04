@@ -18,15 +18,16 @@ docker-compose build
 
 ### Service and port table
 
-| Service Name | Internal Port | Outside Port | Repo Name |
+[link](https://github.com/vivihuang/aj-ui)
+
+| Service Name | Internal Port | Outside Port | Repo |
 |---|---|---|---|
-| `chatbot-ui` | `80` | `3000` | `aj/ukraine` |
-| `bff` | `8080` | `8089` | `aj/georgia` |
-| `rasa` | `5005` | `5005` | `aj/estonia` |
-| `actions` | `5055` | `5055` | `aj/ithuania` |
-| `mongo` | `27017` | `27017` | `aj/estonia` |
-| `backend` | `8080` | `8088` | `aj/latvia` |
-| `dialog-flow` | `8080` | `8087` | `aj/khorezm` |
+| `ui` | `80` | `3000` | [aj-ui](https://github.com/vivihuang/aj-ui) |
+| `bff` | `8080` | `8089` | [aj-bff](https://github.com/vivihuang/aj-bff) |
+| `rasa` | `5005` | `5005` | [aj-rasa](https://github.com/vivihuang/aj-rasa) |
+| `actions` | `5055` | `5055` | [aj-rasa-actions](https://github.com/vivihuang/aj-rasa-actions) |
+| `mongo` | `27017` | `27017` | `N/A` |
+| `backend` | `8080` | `8088` | [aj-backend](https://github.com/vivihuang/aj-backend) |
 
 ### Networking between services
 

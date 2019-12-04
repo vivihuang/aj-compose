@@ -1,19 +1,14 @@
 #!/usr/bin/env bash
 
 echo "==== Build BFF ===="
-cd ../aj-georgia
+cd ../aj-bff
 ./gradlew bootjar
-docker build -t aj/georgia .
+docker build -t aj/bff .
 
-echo "==== Build Custom action ===="
-cd ../aj-latvia
+echo "==== Build Backend ===="
+cd ../aj-backend
 ./gradlew bootjar
-docker build -t aj/latvia .
-
-echo "==== Build DialogFlow ===="
-cd ../aj-khorezm
-./gradlew bootjar
-docker build -t aj/khorezm .
+docker build -t aj/backend .
 
 echo "==== All build done, back to Russia ===="
-cd ../aj-russia
+cd ../aj-compose
