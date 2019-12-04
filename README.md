@@ -1,5 +1,16 @@
 # 🇷🇺 Russia: Build your infrastructure with code
 
+## First time to pull repo
+
+```
+./clone-all.sh
+```
+
+## First time to build jar
+```
+./build-jar.sh
+```
+
 ## Run locally
 Please ensure your repos in the same folder. It will build docker images if no existing images.
 
